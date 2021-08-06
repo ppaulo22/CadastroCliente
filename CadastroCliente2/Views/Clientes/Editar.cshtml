@@ -1,0 +1,61 @@
+﻿@model CadastroCliente2.Models.Clientes
+@{
+    var estados = CadastroCliente2.Util.Estados;
+}
+<p class="card">
+<p class="header">
+    <h4 class="title">Editar Cadastro</h4>
+</p>
+
+<form asp-action="Gravar" class="row g-3">
+    <div class="row mb-1">
+        <div class="col-lg-1">
+            <label for="formCodigo" class="form-label">Código</label>
+            <input type="text" class="form-control" id="formCodigo" asp-for="@Model.Id" placeholder="@Model.Id" disabled>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <label for="formNome" class="form-label">Nome do Cliente</label>
+        <input type="text" class="form-control" id="formNome" asp-for="@Model.Nome" value="@Model.Nome">
+    </div>
+    <div class="col-md-3">
+        <label for="formApelido" class="form-label">Apelido</label>
+        <input type="text" class="form-control" asp-for="@Model.Apelido" value="@Model.Apelido" placeholder="Apelido">
+    </div>
+    @*<div class="col-md-3">
+        <label for="formIdade" class="form-label">Idade</label>
+        <input type="text" class="form-control" asp-for="@Model.Idade" value="@Model.Idade" placeholder="Idade">
+    </div>
+    <div class="col-md-3">
+        <label for="formEmail" class="form-label">E-mail</label>
+        <input type="text" class="form-control" asp-for="@Model.Email" value="@Model.Email" placeholder="Idade">
+    </div>*@
+    <div class="col-md-3">
+        <label for="formEstado" class="form-label">Estado</label>
+        <select class="form-control" asp-for="@Model.Estado" asp-items="@estados"></select>
+    </div>
+    <div class="col-md-3">
+        <label for="formCidade" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="formCidade" asp-for="@Model.Cidade" value="@Model.Cidade" placeholder="Cidade">
+    </div>
+    <div class="col-md-3">
+        <label for="formBairro" class="form-label">Bairro</label>
+        <input type="text" class="form-control" id="formBairro" asp-for="@Model.Bairro" value="@Model.Bairro" placeholder="Bairro">
+    </div>
+    <div class="col-md-3">
+        <label for="formEndereco" class="form-label">Endereço</label>
+        <input type="text" class="form-control" id="formEndereco" asp-for="@Model.Endereco" value="@Model.Endereco" placeholder="Endereço">
+    </div>
+    <div class="col-md-6">
+        <label for="formSituacoes" class="form-label">Situação</label>
+        <select asp-for="@Model.SituacaoId" asp-items="@ViewBag.Situacoes" class="form-control border-input"></select>
+    </div>
+    <div class="col-md-6">
+        <label for="formObservacoes" class="form-label">Obervações</label>
+        <textarea asp-for="@Model.Observacoes" rows="5" class="form-control border-input" placeholder="">@Model.Observacoes</textarea>
+    </div>
+    <div class="text-lg-center">
+        <button type="submit" class="btn btn-danger btn-fill btn-wd">Gravar</button>
+        <a class="btn btn-danger btn-icon btn-fill btn-wd" asp-controller="clientes" asp-action="index"><i class="fa fa-undo"></i></a>
+    </div>
+</form>

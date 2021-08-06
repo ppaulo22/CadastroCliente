@@ -1,0 +1,35 @@
+﻿@model CadastroCliente2.Models.Situacoes
+<p class="card">
+<p class="header">
+    <h4 class="title">Editar Situação</h4>
+</p>
+<p class="content">
+    <form asp-action="Gravar" role="form">
+<p class="row">
+<p class="col-md-2">
+<p class="form-group">
+    <label>Código</label>
+    <input asp-for="@Model.Id" type="text" class="form-control border-input disabled" readonly value="@Model.Id">
+</p>
+ </p>
+<p class="col-md-5">
+<p class="form-group">
+    <label>Descrição da Situação</label>
+    <input asp-for="@Model.Descricao" type="text" class="form-control border-input" placeholder="Descrição" value="@Model.Descricao">
+</p>
+ </p>
+<p class="col-md-5">
+<p class="form-group">
+    <label for="exampleInputEmail1">Status</label>
+    <input asp-for="@Model.Ativo" type="checkbox" class="form-control border-input" value="@Model.Ativo">
+</p>
+ </p>
+ </p>
+<p class="text-center">
+    <button type="submit" class="btn btn-danger btn-fill btn-wd">Gravar</button>
+    <a class="btn btn-danger btn-icon  btn-fill btn-wd" asp-controller="situacoes" asp-action="index"><i class="fa fa-undo"></i></a>
+</p>
+<p class="clearfix"></p>
+ </form>
+ </p>
+</p>

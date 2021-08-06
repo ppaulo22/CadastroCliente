@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>6a009f23-978b-4586-9317-99ab9ddfb96c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="elmah" Version="1.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.8" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
+    <PackageReference Include="SQLite" Version="3.13.0" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.114.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

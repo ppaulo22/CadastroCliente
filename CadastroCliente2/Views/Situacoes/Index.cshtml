@@ -1,0 +1,40 @@
+﻿@using CadastroCliente2.Models
+@model List<Situacoes>
+
+<p class="row">
+<p class="col-md-12">
+<p class="card">
+<p class="header">
+    <h4 class="title">Clientes</h4>
+<p class="category">
+    Exibe situações cadastradas
+    <a class="btn btn-sm btn-danger btn-icon" asp-controller="situacoes" asp-action="editar" asp-route-id="0"><i class="fa fa-plus"></i></a>
+</p>
+ </p>
+<p class="content table-responsive table-full-width">
+    <table class="table table-striped">
+        <thead class="text-primary" style="background-color: beige">
+            <tr>
+                <th>Ação</th>
+                <th>Descrição</th>
+                <th>Ativo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a class="btn btn-sm btn-danger btn-icon" asp-controller="situacoes" asp-action="editar" asp-route-id="@item.Id"><i class="fa fa-pencil-square-o"></i></a>
+                        <a class="btn btn-sm btn-danger btn-icon" asp-controller="situacoes" asp-action="excluir" asp-route-id="@item.Id"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                    <td>@item.Descricao</td>
+                    <td>@item.Ativo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</p>
+ </p>
+ </p>
+</p>

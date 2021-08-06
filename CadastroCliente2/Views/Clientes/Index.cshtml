@@ -1,0 +1,49 @@
+﻿@using CadastroCliente2.Models
+@model List<Clientes>
+
+<p class="row">
+<p class="col-md-12">
+<p class="card">
+<p class="header">
+    <h4 class="title">Cadastro de Clientes</h4>
+<p class="category">
+    <a class="btn btn-sm btn-primary btn-icon" asp-controller="clientes" asp-action="editar" asp-route-id="0">Novo</a>
+</p>
+
+<p class="content table-responsive table-full-width">
+    <table class="table table-striped">
+        <thead class="text-primary" style="background-color: beige">
+            <tr>
+                <th>Ação</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>E-mail</th>
+                <th>Endereço</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Situação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    <a class="btn btn-sm btn-primary btn-icon" asp-controller="clientes" asp-action="editar" asp-route-id="@item.Id"><i class="fa fa-pencil-square-o"></i></a>
+                    <a class="btn btn-sm btn-danger btn-icon" asp-controller="clientes" asp-action="excluir" asp-route-id="@item.Id"><i class="fa fa-trash-o"></i></a>
+                </td>
+                <td>@item.Nome</td>
+                <td>@item.Idade</td>
+                <td>@item.Email</td>
+                <td>@item.Endereco</td>
+                <td>@item.Cidade</td>
+                <td>@item.Estado</td>
+                <td>@item.Situacao.Descricao</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</p>
+ </p>
+ </p>
+</p>
