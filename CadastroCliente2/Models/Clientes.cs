@@ -37,7 +37,7 @@ namespace CadastroCliente2.Models
         
         public int SituacaoId { get; set; }
 
-        [Range(0, 100, ErrorMessage = "Please enter valid integer Number")]
+        [Range(0, 100, ErrorMessage = "A idade é um campo obrigatório.")]
         public int? Idade { get; set; }
 
         public Situacoes Situacao { get; set; }
